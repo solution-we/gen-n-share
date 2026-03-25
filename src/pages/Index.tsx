@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { FilePlus, Archive, Receipt } from 'lucide-react';
+import { FilePlus, Archive } from 'lucide-react';
+import logoHome from '@/assets/logo_home.png';
 
 export default function Index() {
   const navigate = useNavigate();
@@ -11,9 +12,7 @@ export default function Index() {
       <header className="border-b border-border bg-card">
         <div className="container max-w-5xl mx-auto flex items-center justify-between py-4 px-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-              <Receipt className="w-5 h-5 text-primary-foreground" />
-            </div>
+            <img src={logoHome} alt="MAAS Academy" className="h-10 w-10 rounded-lg object-cover" />
             <div>
               <h1 className="font-display text-xl font-bold text-foreground">MAAS Academy</h1>
               <p className="text-xs text-muted-foreground">Receipt Management System</p>
@@ -25,9 +24,7 @@ export default function Index() {
       {/* Hero */}
       <main className="flex-1 flex items-center justify-center px-4">
         <div className="text-center max-w-lg animate-fade-in">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-3">
-            Receipt Manager
-          </h2>
+          <img src={logoHome} alt="MAAS Academy" className="h-40 mx-auto mb-6 object-contain" />
           <p className="text-muted-foreground mb-10 text-lg">
             Generate, organize, and export professional receipts with ease.
           </p>
