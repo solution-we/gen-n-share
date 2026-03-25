@@ -106,7 +106,7 @@ const ReceiptTemplate = React.forwardRef<HTMLDivElement, ReceiptTemplateProps>(
               <span style={{ letterSpacing: '1.5px', borderBottom: '1px dotted #888', display: 'inline-block', minWidth: isSquare ? '40px' : '50px', paddingBottom: '2px', marginLeft: '4px', marginRight: '8px' }}>
                 {division || '\u00A0'}
               </span>
-              <span style={{ fontWeight: 500 }}>Description</span>
+              <span style={{ fontWeight: 500 }}>Description:</span>
               <span style={{ letterSpacing: '1.5px', borderBottom: '1px dotted #888', display: 'inline-block', flex: 1, minWidth: '100px', paddingBottom: '2px', marginLeft: '4px' }}>
                 {description || '\u00A0'}
               </span>
