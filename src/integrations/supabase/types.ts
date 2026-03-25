@@ -14,7 +14,66 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      receipts: {
+        Row: {
+          amount: number
+          class: string
+          created_at: string
+          date: string
+          description: string
+          division: string
+          id: string
+          receipt_number: number
+          student_name: string
+        }
+        Insert: {
+          amount: number
+          class: string
+          created_at?: string
+          date?: string
+          description: string
+          division: string
+          id?: string
+          receipt_number: number
+          student_name: string
+        }
+        Update: {
+          amount?: number
+          class?: string
+          created_at?: string
+          date?: string
+          description?: string
+          division?: string
+          id?: string
+          receipt_number?: number
+          student_name?: string
+        }
+        Relationships: []
+      }
+      students: {
+        Row: {
+          class: string
+          created_at: string
+          division: string
+          id: string
+          name: string
+        }
+        Insert: {
+          class: string
+          created_at?: string
+          division: string
+          id?: string
+          name: string
+        }
+        Update: {
+          class?: string
+          created_at?: string
+          division?: string
+          id?: string
+          name?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
