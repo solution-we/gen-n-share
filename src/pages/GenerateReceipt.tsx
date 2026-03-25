@@ -50,7 +50,7 @@ export default function GenerateReceipt() {
   const currentAmount = parseFloat(form.amount) || 0;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#ffffff]">
       {/* Header */}
       <header className="border-b border-border bg-card sticky top-0 z-10">
         <div className="container max-w-6xl mx-auto flex items-center gap-3 py-3 px-4">
