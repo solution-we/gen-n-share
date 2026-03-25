@@ -24,8 +24,13 @@ const ReceiptTemplate = React.forwardRef<HTMLDivElement, ReceiptTemplateProps>(
     return (
       <div
         ref={ref}
-        className={`bg-[#ffffff] ${isSquare ? 'w-[500px] p-5' : 'w-[720px] p-6'}`}
-        style={{ fontFamily: "'Inter', sans-serif", color: '#1a1a2e' }}
+        style={{
+          fontFamily: "'Inter', sans-serif",
+          color: '#1a1a2e',
+          backgroundColor: '#ffffff',
+          width: isSquare ? '500px' : '720px',
+          padding: isSquare ? '20px' : '24px',
+        }}
       >
         {/* Outer border */}
         <div style={{ border: '3px solid #1a1a2e', padding: '4px' }}>
