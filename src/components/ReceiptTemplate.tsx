@@ -90,31 +90,28 @@ const ReceiptTemplate = React.forwardRef<HTMLDivElement, ReceiptTemplateProps>(
             </div>
 
             {/* Name of Student */}
-            <div style={{ marginBottom: '8px', fontSize: '14px' }}>
-              <span style={{ fontWeight: 500 }}>Name of Student:</span>
-              <span style={{ letterSpacing: '1.5px', borderBottom: '1px dotted #888', display: 'inline-block', minWidth: isSquare ? '280px' : '480px', paddingBottom: '2px', marginLeft: '4px' }}>
+            <div style={{ marginBottom: '10px', fontSize: '14px', display: 'flex', alignItems: 'baseline' }}>
+              <span style={{ fontWeight: 600, whiteSpace: 'nowrap', marginRight: '8px' }}>Name of Student:</span>
+              <span style={{ borderBottom: '1px dotted #888', display: 'inline-block', flex: 1, paddingBottom: '2px', fontWeight: 500 }}>
                 {studentName || '\u00A0'}
               </span>
             </div>
 
             {/* Class, Div, Description */}
-            <div style={{ marginBottom: '8px', fontSize: '14px', display: 'flex', flexWrap: 'wrap', gap: '0px' }}>
-              <span style={{ fontWeight: 500 }}>Class:</span>
-              <span style={{ letterSpacing: '1.5px', borderBottom: '1px dotted #888', display: 'inline-block', minWidth: isSquare ? '60px' : '80px', paddingBottom: '2px', marginLeft: '4px', marginRight: '8px' }}>
+            <div style={{ marginBottom: '14px', fontSize: '14px', display: 'flex', alignItems: 'baseline' }}>
+              <span style={{ fontWeight: 600, whiteSpace: 'nowrap', marginRight: '6px' }}>Class:</span>
+              <span style={{ borderBottom: '1px dotted #888', display: 'inline-block', minWidth: isSquare ? '50px' : '70px', paddingBottom: '2px', marginRight: '14px', fontWeight: 500 }}>
                 {className || '\u00A0'}
               </span>
-              <span style={{ fontWeight: 500 }}>Div:</span>
-              <span style={{ letterSpacing: '1.5px', borderBottom: '1px dotted #888', display: 'inline-block', minWidth: isSquare ? '40px' : '50px', paddingBottom: '2px', marginLeft: '4px', marginRight: '8px' }}>
+              <span style={{ fontWeight: 600, whiteSpace: 'nowrap', marginRight: '6px' }}>Div:</span>
+              <span style={{ borderBottom: '1px dotted #888', display: 'inline-block', minWidth: isSquare ? '40px' : '50px', paddingBottom: '2px', marginRight: '14px', fontWeight: 500 }}>
                 {division || '\u00A0'}
               </span>
-              <span style={{ fontWeight: 500 }}>Description:</span>
-              <span style={{ letterSpacing: '1.5px', borderBottom: '1px dotted #888', display: 'inline-block', flex: 1, minWidth: '100px', paddingBottom: '2px', marginLeft: '4px' }}>
+              <span style={{ fontWeight: 600, whiteSpace: 'nowrap', marginRight: '6px' }}>Description:</span>
+              <span style={{ borderBottom: '1px dotted #888', display: 'inline-block', flex: 1, paddingBottom: '2px', fontWeight: 500 }}>
                 {description || '\u00A0'}
               </span>
             </div>
-
-            {/* Spacer */}
-            <div style={{ marginBottom: '14px' }} />
 
             {/* Amount box */}
             <div style={{ display: 'flex', alignItems: 'stretch', marginBottom: '0px', width: isSquare ? '200px' : '250px' }}>

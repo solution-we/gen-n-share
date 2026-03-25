@@ -7,20 +7,7 @@ export default function Index() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      {/* Header */}
-      <header className="border-b border-border bg-card">
-        <div className="container max-w-5xl mx-auto flex items-center justify-between py-4 px-4">
-          <div className="flex items-center gap-3">
-            <img src={logoHome} alt="MAAS Academy" className="h-10 w-10 rounded-lg object-cover" />
-            <div>
-              <h1 className="font-display text-xl font-bold text-foreground">MAAS Academy</h1>
-              <p className="text-xs text-muted-foreground">Receipt Management System</p>
-            </div>
-          </div>
-        </div>
-      </header>
-
+    <div className="min-h-screen bg-[#ffffff] flex flex-col">
       {/* Hero */}
       <main className="flex-1 flex items-center justify-center px-4">
         <div className="text-center max-w-lg animate-fade-in">
