@@ -75,14 +75,14 @@ const ReceiptTemplate = React.forwardRef<HTMLDivElement, ReceiptTemplateProps>(
                 fontSize: '14px',
                 fontWeight: 700,
                 letterSpacing: '2px',
-                backgroundColor: '#f0f0f0'
+                backgroundColor: '#1a1a2e',
+                color: '#ffffff'
               }}>
                 FEE RECEIPT
               </div>
 
               <div style={{ fontSize: '14px' }}>
-                <span style={{ fontWeight: 500 }}>Date</span>
-                <span style={{ letterSpacing: '2px' }}>{dots(6)}</span>
+                <span style={{ fontWeight: 500 }}>Date: </span>
                 <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}>
                   {formattedDate}
                 </span>
@@ -91,7 +91,7 @@ const ReceiptTemplate = React.forwardRef<HTMLDivElement, ReceiptTemplateProps>(
 
             {/* Name of Student */}
             <div style={{ marginBottom: '8px', fontSize: '14px' }}>
-              <span style={{ fontWeight: 500 }}>Name of Student</span>
+              <span style={{ fontWeight: 500 }}>Name of Student:</span>
               <span style={{ letterSpacing: '1.5px', borderBottom: '1px dotted #888', display: 'inline-block', minWidth: isSquare ? '280px' : '480px', paddingBottom: '2px', marginLeft: '4px' }}>
                 {studentName || '\u00A0'}
               </span>
@@ -99,22 +99,22 @@ const ReceiptTemplate = React.forwardRef<HTMLDivElement, ReceiptTemplateProps>(
 
             {/* Class, Div, Description */}
             <div style={{ marginBottom: '8px', fontSize: '14px', display: 'flex', flexWrap: 'wrap', gap: '0px' }}>
-              <span style={{ fontWeight: 500 }}>Class</span>
+              <span style={{ fontWeight: 500 }}>Class:</span>
               <span style={{ letterSpacing: '1.5px', borderBottom: '1px dotted #888', display: 'inline-block', minWidth: isSquare ? '60px' : '80px', paddingBottom: '2px', marginLeft: '4px', marginRight: '8px' }}>
                 {className || '\u00A0'}
               </span>
-              <span style={{ fontWeight: 500 }}>Div</span>
+              <span style={{ fontWeight: 500 }}>Div:</span>
               <span style={{ letterSpacing: '1.5px', borderBottom: '1px dotted #888', display: 'inline-block', minWidth: isSquare ? '40px' : '50px', paddingBottom: '2px', marginLeft: '4px', marginRight: '8px' }}>
                 {division || '\u00A0'}
               </span>
-              <span style={{ fontWeight: 500 }}>Description</span>
+              <span style={{ fontWeight: 500 }}>Description:</span>
               <span style={{ letterSpacing: '1.5px', borderBottom: '1px dotted #888', display: 'inline-block', flex: 1, minWidth: '100px', paddingBottom: '2px', marginLeft: '4px' }}>
                 {description || '\u00A0'}
               </span>
             </div>
 
-            {/* Extra dotted line for description overflow */}
-            <div style={{ borderBottom: '1px dotted #888', marginBottom: '14px', height: '18px' }} />
+            {/* Spacer */}
+            <div style={{ marginBottom: '14px' }} />
 
             {/* Amount box */}
             <div style={{ display: 'flex', alignItems: 'stretch', marginBottom: '0px', width: isSquare ? '200px' : '250px' }}>
