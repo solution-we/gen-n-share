@@ -94,8 +94,10 @@ export function useReceipts() {
       return latest[0];
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['receipts'] });
-      queryClient.invalidateQueries({ queryKey: ['next-receipt-number'] });
+      queryClient.removeQueries({ queryKey: ['receipts'] });
+      queryClient.removeQueries({ queryKey: ['next-receipt-number'] });
+      queryClient.refetchQueries({ queryKey: ['receipts'] });
+      queryClient.refetchQueries({ queryKey: ['next-receipt-number'] });
       toast.success('Latest receipt deleted');
     },
     onError: (error) => {
