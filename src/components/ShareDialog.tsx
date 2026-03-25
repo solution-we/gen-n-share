@@ -15,13 +15,13 @@ export default function ShareDialog({ open, onOpenChange, receiptNumber }: Share
     {
       name: 'WhatsApp',
       icon: <MessageCircle className="w-5 h-5" />,
-      url: `https://wa.me/?text=${message}`,
+      url: `https://api.whatsapp.com/send?text=${message}`,
       color: 'bg-[#25D366] hover:bg-[#20bd5a]',
     },
     {
-      name: 'WhatsApp Business',
+      name: 'WA Business',
       icon: <MessageCircle className="w-5 h-5" />,
-      url: `https://wa.me/?text=${message}`,
+      url: `https://api.whatsapp.com/send?text=${message}&app=business`,
       color: 'bg-[#128C7E] hover:bg-[#0e7a6e]',
     },
     {

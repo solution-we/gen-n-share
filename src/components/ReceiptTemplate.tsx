@@ -75,7 +75,8 @@ const ReceiptTemplate = React.forwardRef<HTMLDivElement, ReceiptTemplateProps>(
                 fontSize: '14px',
                 fontWeight: 700,
                 letterSpacing: '2px',
-                backgroundColor: '#f0f0f0'
+                backgroundColor: '#1a1a2e',
+                color: '#ffffff'
               }}>
                 FEE RECEIPT
               </div>
