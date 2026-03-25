@@ -98,7 +98,7 @@ const ReceiptTemplate = React.forwardRef<HTMLDivElement, ReceiptTemplateProps>(
 
             {/* Class, Div, Description */}
             <div style={{ marginBottom: '8px', fontSize: '14px', display: 'flex', flexWrap: 'wrap', gap: '0px' }}>
-              <span style={{ fontWeight: 500 }}>Class</span>
+              <span style={{ fontWeight: 500 }}>Class:</span>
               <span style={{ letterSpacing: '1.5px', borderBottom: '1px dotted #888', display: 'inline-block', minWidth: isSquare ? '60px' : '80px', paddingBottom: '2px', marginLeft: '4px', marginRight: '8px' }}>
                 {className || '\u00A0'}
               </span>
