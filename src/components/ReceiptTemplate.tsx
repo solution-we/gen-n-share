@@ -81,8 +81,7 @@ const ReceiptTemplate = React.forwardRef<HTMLDivElement, ReceiptTemplateProps>(
               </div>
 
               <div style={{ fontSize: '14px' }}>
-                <span style={{ fontWeight: 500 }}>Date</span>
-                <span style={{ letterSpacing: '2px' }}>{dots(6)}</span>
+                <span style={{ fontWeight: 500 }}>Date: </span>
                 <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}>
                   {formattedDate}
                 </span>
