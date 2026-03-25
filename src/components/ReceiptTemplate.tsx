@@ -112,8 +112,8 @@ const ReceiptTemplate = React.forwardRef<HTMLDivElement, ReceiptTemplateProps>(
               </span>
             </div>
 
-            {/* Extra dotted line for description overflow */}
-            <div style={{ borderBottom: '1px dotted #888', marginBottom: '14px', height: '18px' }} />
+            {/* Spacer */}
+            <div style={{ marginBottom: '14px' }} />
 
             {/* Amount box */}
             <div style={{ display: 'flex', alignItems: 'stretch', marginBottom: '0px', width: isSquare ? '200px' : '250px' }}>
