@@ -30,10 +30,23 @@ export default function ExportDialog({ open, onOpenChange, receipt, onExported }
     if (!receiptRef.current) return;
     setExporting(true);
     try {
+      if ('fonts' in document) {
+        await document.fonts.ready;
+      }
+
       const canvas = await html2canvas(receiptRef.current, {
-        scale: 3,
+        scale: 2,
         backgroundColor: '#ffffff',
         useCORS: true,
+        logging: false,
+        onclone: (clonedDoc) => {
+          clonedDoc.body.style.lineHeight = '1.2';
+          clonedDoc.querySelectorAll('img').forEach((img) => {
+            const image = img as HTMLImageElement;
+            image.style.display = 'inline-block';
+            image.style.verticalAlign = 'top';
+          });
+        },
       });
 
       const fileName = `receipt-${receipt.receipt_number}`;
@@ -43,9 +56,9 @@ export default function ExportDialog({ open, onOpenChange, receipt, onExported }
         const pdf = new jsPDF({
           orientation: layout === 'landscape' ? 'landscape' : 'portrait',
           unit: 'px',
-          format: [canvas.width / 3, canvas.height / 3],
+          format: [canvas.width / 2, canvas.height / 2],
         });
-        pdf.addImage(imgData, 'PNG', 0, 0, canvas.width / 3, canvas.height / 3);
+        pdf.addImage(imgData, 'PNG', 0, 0, canvas.width / 2, canvas.height / 2);
         pdf.save(`${fileName}.pdf`);
       } else {
         const link = document.createElement('a');
