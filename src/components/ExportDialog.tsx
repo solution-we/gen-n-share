@@ -60,60 +60,76 @@ export default function ExportDialog({ open, onOpenChange, receipt, onExported }
   };
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="font-display text-xl">Export Receipt</DialogTitle>
-        </DialogHeader>
+    <>
+      {/* Hidden full-size render for export */}
+      <div style={{ position: 'fixed', left: '-9999px', top: 0, zIndex: -1 }}>
+        <ReceiptTemplate
+          ref={receiptRef}
+          receiptNumber={receipt.receipt_number}
+          studentName={receipt.student_name}
+          className={receipt.class}
+          division={receipt.division}
+          description={receipt.description}
+          amount={receipt.amount}
+          date={receipt.date}
+          layout={layout}
+        />
+      </div>
 
-        {/* Layout choice */}
-        <div className="flex gap-3 mb-4">
-          <Button
-            variant={layout === 'landscape' ? 'default' : 'outline'}
-            onClick={() => setLayout('landscape')}
-            className="flex-1 gap-2"
-          >
-            <Monitor className="w-4 h-4" /> Landscape
-          </Button>
-          <Button
-            variant={layout === 'square' ? 'default' : 'outline'}
-            onClick={() => setLayout('square')}
-            className="flex-1 gap-2"
-          >
-            <Smartphone className="w-4 h-4" /> Square
-          </Button>
-        </div>
+      <Dialog open={open} onOpenChange={onOpenChange}>
+        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="font-display text-xl">Export Receipt</DialogTitle>
+          </DialogHeader>
 
-        {/* Preview */}
-        <div className="flex justify-center overflow-auto bg-muted rounded-lg p-4">
-          <div className="transform scale-[0.65] origin-top">
-            <ReceiptTemplate
-              ref={receiptRef}
-              receiptNumber={receipt.receipt_number}
-              studentName={receipt.student_name}
-              className={receipt.class}
-              division={receipt.division}
-              description={receipt.description}
-              amount={receipt.amount}
-              date={receipt.date}
-              layout={layout}
-            />
+          {/* Layout choice */}
+          <div className="flex gap-3 mb-4">
+            <Button
+              variant={layout === 'landscape' ? 'default' : 'outline'}
+              onClick={() => setLayout('landscape')}
+              className="flex-1 gap-2"
+            >
+              <Monitor className="w-4 h-4" /> Landscape
+            </Button>
+            <Button
+              variant={layout === 'square' ? 'default' : 'outline'}
+              onClick={() => setLayout('square')}
+              className="flex-1 gap-2"
+            >
+              <Smartphone className="w-4 h-4" /> Square
+            </Button>
           </div>
-        </div>
 
-        {/* Export buttons */}
-        <div className="flex gap-3 mt-4">
-          <Button onClick={() => doExport('png')} disabled={exporting} className="flex-1 gap-2">
-            <Download className="w-4 h-4" /> PNG
-          </Button>
-          <Button onClick={() => doExport('pdf')} disabled={exporting} className="flex-1 gap-2">
-            <Download className="w-4 h-4" /> PDF
-          </Button>
-          <Button onClick={() => doExport('jpg')} disabled={exporting} variant="outline" className="flex-1 gap-2">
-            <Download className="w-4 h-4" /> JPG
-          </Button>
-        </div>
-      </DialogContent>
-    </Dialog>
+          {/* Preview (visual only) */}
+          <div className="flex justify-center overflow-auto bg-muted rounded-lg p-4">
+            <div style={{ transform: 'scale(0.65)', transformOrigin: 'top center' }}>
+              <ReceiptTemplate
+                receiptNumber={receipt.receipt_number}
+                studentName={receipt.student_name}
+                className={receipt.class}
+                division={receipt.division}
+                description={receipt.description}
+                amount={receipt.amount}
+                date={receipt.date}
+                layout={layout}
+              />
+            </div>
+          </div>
+
+          {/* Export buttons */}
+          <div className="flex gap-3 mt-4">
+            <Button onClick={() => doExport('png')} disabled={exporting} className="flex-1 gap-2">
+              <Download className="w-4 h-4" /> PNG
+            </Button>
+            <Button onClick={() => doExport('pdf')} disabled={exporting} className="flex-1 gap-2">
+              <Download className="w-4 h-4" /> PDF
+            </Button>
+            <Button onClick={() => doExport('jpg')} disabled={exporting} variant="outline" className="flex-1 gap-2">
+              <Download className="w-4 h-4" /> JPG
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }
